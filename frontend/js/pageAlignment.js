@@ -15,7 +15,6 @@ define(['jquery', 'underscore', 'backbone'], function ($, _, Backbone) {
             }
 
         } else {
-
             if ((60 + maxHeight($('#navdiv nav').outerHeight() + 23, $('#body').outerHeight()) + $('div#heading').outerHeight() + $('footer').outerHeight()) > window.innerHeight) {
                 $('body').css('position', 'relative')
                 $('footer').css('bottom', -$('footer').outerHeight() - 60 + 'px')

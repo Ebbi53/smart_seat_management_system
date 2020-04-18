@@ -10,6 +10,10 @@ define(['jquery', 'underscore', 'backbone', 'text!template/menu.html', 'router',
         },
 
         events: {
+            'click a[href="#auth"]': function (e) {
+                console.log('ads')
+                e.preventDefault();
+            }
         },
 
 

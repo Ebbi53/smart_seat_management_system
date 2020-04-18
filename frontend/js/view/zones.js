@@ -1,7 +1,8 @@
 define(['jquery', 'underscore', 'backbone', 'text!template/zones.html', 'model/seats', 'pageAlignment'], function ($, _, Backbone, template, Model, pageAlignment) {
     return Backbone.View.extend({
         tagname: 'div',
-        className: 'row',
+        className: 'row mg-bt',
+        id: 'zones',
         template: template,
 
         initialize: function () {
@@ -19,6 +20,7 @@ define(['jquery', 'underscore', 'backbone', 'text!template/zones.html', 'model/s
 
 
             $(document).ready(function () {
+                // console.log($('#body').outerHeight());
                 pageAlignment();
             })
         },

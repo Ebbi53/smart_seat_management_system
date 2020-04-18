@@ -1,8 +1,9 @@
 define(['jquery', 'underscore', 'backbone', 'text!template/admin.html', 'model/admin', 'pageAlignment'], function ($, _, Backbone, template, Model, pageAlignment) {
     return Backbone.View.extend({
         tagname: 'div',
-        className: 'row',
+        className: 'row mg-bt',
         template: template,
+        id: 'admin',
 
         initialize: function () {
             this.model = Model;
@@ -10,6 +11,7 @@ define(['jquery', 'underscore', 'backbone', 'text!template/admin.html', 'model/a
         },
 
         events: {
+            
         },
 
 

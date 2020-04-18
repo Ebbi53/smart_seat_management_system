@@ -11,6 +11,7 @@ define(['jquery', 'underscore', 'backbone', 'pageAlignment'], function ($, _, Ba
                         $('#body').html(new view().el)
                     })
 
+                    $('a.nav-link').removeClass('active-section');
                     $(`a[href="#${route}"]`).addClass('active-section');
 
                 } else {

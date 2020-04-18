@@ -1,8 +1,9 @@
 define(['jquery', 'underscore', 'backbone', 'text!template/home.html', 'model/seats', 'pageAlignment'], function ($, _, Backbone, template, Model, pageAlignment) {
     return Backbone.View.extend({
         tagname: 'div',
-        className: 'row',
+        className: 'row mg-bt',
         template: template,
+        id: 'home',
 
         initialize: function () {
             this.model = Model;
