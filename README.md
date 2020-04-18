@@ -1,1 +1,1 @@
-# Smart Seat Managemet System
+# Smart Seat Management System
