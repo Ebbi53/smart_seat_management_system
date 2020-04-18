@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', 'text!template/header.html', 'model/content'], function ($, _, Backbone, template, Content) {
+define(['jquery', 'underscore', 'backbone', 'text!template/header.html'], function ($, _, Backbone, template) {
     return Backbone.View.extend({
         tagname: 'div',
         className: 'row w-100',
@@ -6,7 +6,7 @@ define(['jquery', 'underscore', 'backbone', 'text!template/header.html', 'model/
         template: template,
 
         initialize: function () {
-            this.model = Content;
+            
             this.render();
         },
 
@@ -15,10 +15,8 @@ define(['jquery', 'underscore', 'backbone', 'text!template/header.html', 'model/
 
 
         render: function () {
-            this.$el.html(_.template(this.template)(_.extend(this.model.toJSON())));
-
-            $('title').html(this.model.get('data')['Heading'] + ' ' + this.model.get('data')['Sub-Heading'])
-            // console.log(this.model.get('data'))
+            this.$el.html(_.template(this.template));
+            // this.$el.html(_.template(this.template)(_.extend(this.model.toJSON())));
 
             $(document).ready(function () {
             })

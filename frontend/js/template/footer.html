@@ -1,19 +1,11 @@
-<div class="col-lg-5 col-sm-12 ml-lg-auto" id="footer_note">
+<div class="col-lg-5 col-sm-12" id="footer_note">
     <p class='text-muted'>
-        <% var note = data['Footer message'].replace('\n', '<br>').replace(data['Office name'], `<a href="${data['Website link']}">${data['Office name']}</a>`).replace(data['Email address'], `<a href="mailto:${data['Email address']}">${data['Email address']}</a>`) %>
-        <%= note %>
-        <!-- This website is designed and maintained by the <a href="http://www.cityu.edu.hk/geo/">Global
-            Engagement Office.</a><br>
-        This website contains statistics of the University covering the non-local student information.<br>
-        Please contact the Global Engagement Office at <a href="mailto:geo@cityu.edu.hk">geo@cityu.edu.hk</a> should you
-        have any questions. -->
-        <br><br>
-        Last updated: 
-        <%= data['Last updated date'].replace(/^([1-9]{1,2})([a-z]{2})/g, '$1<sup>$2</sup>') %>
-        <!-- 21<sup>st</sup> February 2020 -->
+        This web portal is to present the Real-Time seat occupancy status of the public places at the University like
+        Library, Cafeteria, Labs etc. This project aims to solve the problem of unfair seat hoarding during the peak
+        times. Check it out on <a href="https://github.com/Ebbi53/smart_seat_management_system">GitHub</a>.<br>
     </p>
 </div>
-<div class="col-lg-4 col-5 ml-auto" style="margin-top: auto; margin-bottom: auto; padding: 0;">
+<div class="col-lg-4 col-12 ml-auto" style="margin-top: auto; margin-bottom: auto; padding: 0;">
     <div class="row" id="footer_links">
         <div class="col-xl-3 col-md-3 col-6">
             <a href="https://www.cityu.edu.hk/web/privacy">Privacy Policy</a>
@@ -30,6 +22,6 @@
         </div>
     </div>
 </div>
-<div class="col-lg-2 col-sm-4 col-6 mr-auto" id="geo_logo">
-    <img src="img/GEO_logo.png" alt="GEO logo" width="100%">
-</div>
+<!-- <div class="col-12" style="text-align: center; padding: 10px;">
+    © 2020 All rights reserved
+</div> -->

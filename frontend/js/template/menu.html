@@ -1,0 +1,56 @@
+<% if (progress != null && progress < 100) { %>
+<% $('.bar').show() %>
+<% } else { %>
+<% $('.bar').hide() %>
+
+<ul class="navbar-nav flex-column w-100">
+    <li class="nav-item">
+        <a class="nav-link" href="#admin">
+            <div class="row w-100 no-margin">
+                <div class="col-10 no-padding">
+                    Admin View
+                </div>
+                <div class="col-2 my-auto no-padding">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#zones">
+            <div class="row w-100 no-margin">
+                <div class="col-10 no-padding">
+                    Zones
+                </div>
+                <div class="col-2 my-auto no-padding">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#available">
+            <div class="row w-100 no-margin">
+                <div class="col-10 no-padding">
+                    Available Seats
+                </div>
+                <div class="col-2 my-auto no-padding">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#reserved">
+            <div class="row w-100 no-margin">
+                <div class="col-10 no-padding">
+                    Reserved Seats
+                </div>
+                <div class="col-2 my-auto no-padding">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
+<% } %>
