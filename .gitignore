@@ -1,0 +1,7 @@
+*.zip
+*.avi
+# *.png
+*.mp4
+*.mov
+*.weights
+# lib

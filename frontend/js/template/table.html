@@ -1,0 +1,68 @@
+<h4 id="title">
+    <%- title %>
+</h4>
+<table id="figures">
+    <tr>
+        
+        <th rowspan="2">Type of students</th>
+        <th colspan="6">Year of Studies</th>
+    </tr>
+    <tr>
+        <th>2015-16</th>
+        <th>2016-17</th>
+        <th>2017-18</th>
+        <th>2018-19</th>
+        <th>2019-20</th>
+        <th>Overall</th>
+    </tr>
+    <tr>
+        <td>International</td>
+        <td>94</td>
+        <td>153</td>
+        <td>170</td>
+        <td>301</td>
+        <td>286</td>
+        <td>1004</td>
+    </tr>
+    <tr>
+        <td>Mainland China (Non Gaokao)</td>
+        <td>--</td>
+        <td>9</td>
+        <td>20</td>
+        <td>13</td>
+        <td>24</td>
+        <td>66</td>
+    </tr>
+    <tr>
+        <td>Mainland China (Gaokao)</td>
+        <td>206</td>
+        <td>207</td>
+        <td>209</td>
+        <td>216</td>
+        <td>215</td>
+        <td>1053</td>
+    </tr>
+    <tr>
+        <td>Total No. of New Intakes</td>
+        <td>300</td>
+        <td>369</td>
+        <td>399</td>
+        <td>530</td>
+        <td>525</td>
+        <td>2123</td>
+    </tr>
+    <tr>
+        <td>No. of Representing Countries/Regions</td>
+        <td>13</td>
+        <td>27</td>
+        <td>30</td>
+        <td>29</td>
+        <td>28</td>
+        <td>53</td>
+    </tr>
+</table>
+<div id="captions" class="text-muted">
+    <% for (var caption of captions) { %>
+        <p> <%- caption </p>
+    <% } %>
+</div>
