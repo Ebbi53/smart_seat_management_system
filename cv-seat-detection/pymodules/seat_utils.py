@@ -30,12 +30,17 @@ def draw_box_and_text(img, text, box, color):
     """
     cv2.putText(
         img, text,
-        (box[1]+10, box[0]+10), cv2.FONT_HERSHEY_PLAIN,
-        0.9, color)
+        (box[0], box[1]-5), cv2.FONT_HERSHEY_SIMPLEX,
+        0.5, color, 2)
+    # cv2.rectangle(
+    #     img,
+    #     (box[1], box[0]),
+    #     (box[3], box[2]),
+    #     color, 2)
     cv2.rectangle(
         img,
-        (box[1], box[0]),
-        (box[3], box[2]),
+        (box[0], box[1]),
+        (box[2], box[3]),
         color, 2)
 
 
@@ -60,19 +65,19 @@ def put_seat_status_text(seat, img):
     cv2.putText(
         img, "Status: {}".format(seat.status.name),
         (10, 15), cv2.FONT_HERSHEY_SIMPLEX,
-        0.5, color)
+        0.5, color, 2)
     cv2.putText(
         img, "Person in frame: {}".format(seat.person_in_frame_counter),
         (10, 30), cv2.FONT_HERSHEY_SIMPLEX,
-        0.5, color)
+        0.5, color, 2)
     cv2.putText(
         img, "Skip: {}".format(seat.skip_counter),
         (10, 45), cv2.FONT_HERSHEY_SIMPLEX,
-        0.5, color)
+        0.5, color, 2)
     cv2.putText(
         img, "Object in frame: {}".format(seat.object_in_frame_counter),
         (10, 60), cv2.FONT_HERSHEY_SIMPLEX,
-        0.5, color)
+        0.5, color, 2)
 
     h, w, _ = img.shape
     cv2.rectangle(

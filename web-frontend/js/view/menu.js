@@ -18,9 +18,6 @@ define(['jquery', 'underscore', 'backbone', 'text!template/menu.html', 'router',
 
 
         render: function (progress) {
-            // this.$el.html(_.template(this.template)(_.extend(this.model.toJSON(), {
-            //     progress: progress
-            // })));
 
             this.$el.html(_.template(this.template)(_.extend({
                 progress: progress

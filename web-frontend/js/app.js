@@ -1,6 +1,6 @@
 define(['jquery', 'underscore', 'backbone', 'bootstrap', 'router'], function ($, _, Backbone, Bootstrap, Router) {
 
-    var version = 1.2
+    var version = 1.3
 
     var init = function () {
         console.log('Version: ' + version);
@@ -10,6 +10,17 @@ define(['jquery', 'underscore', 'backbone', 'bootstrap', 'router'], function ($,
             $('footer').html(new footerView().el);
             $('#navdiv nav').html(new menuView().el);
         })
+
+        var socket = io()
+
+        var update = () => {
+            // console.log('adsasd')
+            // location.reload()
+        }
+
+        socket.on("RESERVED", update);
+        socket.on("AVAILABLE", update);
+        socket.on("OCCUPIED", update);
     }
     return {
         init: init,

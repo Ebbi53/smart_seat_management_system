@@ -6,9 +6,9 @@ Code adapted from https://stackoverflow.com/a/8782324/10420149
 import numpy as np
 import matplotlib.pyplot as plt
 
-labels_detection = np.genfromtxt("detection_labels.csv", dtype=int, delimiter=",")
-ground_truth = np.genfromtxt("ground_truth_labels.csv", dtype=int, delimiter=",")
-labels_e2e = np.genfromtxt("e2e_labels.csv", dtype=float)
+labels_detection = np.genfromtxt("../data/detection_labels.csv", dtype=int, delimiter=",")
+ground_truth = np.genfromtxt("../data/ground_truth_labels.csv", dtype=int, delimiter=",")
+labels_e2e = np.genfromtxt("../data/e2e_labels.csv", dtype=float)
 labels_e2e = np.array([labels_e2e[:8564], labels_e2e[8564:8564*2],
                        labels_e2e[8564*2:8564*3], labels_e2e[8564*3:]]).T.astype(int)
 
@@ -29,10 +29,10 @@ def avg(a, b):
 m = 250
 num_rows = 2
 
-for seat in range(4):
-    data = [ground_truth[:, seat],
-            # labels_detection[:, seat],
-            labels_e2e[:, seat]]
+for seat in range(2):
+    data = [ground_truth[:, seat+2],
+            # labels_detection[:, seat+2],
+            labels_e2e[:, seat+2]]
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -51,9 +51,9 @@ for seat in range(4):
 
             if col == 2:  # OCCUPIED
                 plt.fill_between(x1, y1, y2=y2, color='red')
-
+    plt.lege
     plt.ylim(num_rows*m+30, 0)
     plt.xlim(0, len(ground_truth))
-    plt.savefig("bar_graph_seat{}".format(seat), bbox_inches="tight", dpi=1000)
-    plt.show()
-    plt.gcf().clear()
+    plt.savefig("bar_graph_seat{}".format(seat+2), bbox_inches="tight", dpi=1000)
+    # plt.show()
+    # plt.gcf().clear()

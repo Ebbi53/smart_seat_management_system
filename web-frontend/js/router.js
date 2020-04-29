@@ -3,10 +3,8 @@ define(['jquery', 'underscore', 'backbone', 'pageAlignment'], function ($, _, Ba
         routes: {
             '*all': function (route) {
                 if (route) {
-                    // console.log(encodeURI(Data.get('mappings')[route]))
-
                     route != 'home' ? $('div.circle-loader').removeClass('hidden') : null;
-
+                    $('#body').children().remove()
                     require([`view/${route}`], function (view) {
                         $('#body').html(new view().el)
                     })
@@ -29,7 +27,7 @@ define(['jquery', 'underscore', 'backbone', 'pageAlignment'], function ($, _, Ba
     window.onresize = pageAlignment;
 
     $(document).ready(function () {
-
+        
         pageAlignment();
         
         $('div.circle-loader').addClass('hidden');

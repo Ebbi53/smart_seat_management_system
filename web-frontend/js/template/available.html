@@ -1,4 +1,7 @@
-<div class="col-12 table-responsive">
+<div class="w-100" id="reload-icon">
+    <i class="fas fa-sync-alt"></i>
+</div>
+<div class="col-12 table-responsive ml-3">
     <table class="table ">
         <thead class="thead-dark">
             <tr>
@@ -10,77 +13,43 @@
             </tr>
         </thead>
         <tbody>
+            <% for (let record of data) { %>
             <tr>
-                <td>1</td>
-                <td>A</td>
+                <td><%- record['seat_id'] %></td>
+                <td><%- record['zone_id'] %></td>
                 <td>
-                    <a href="" data-toggle="modal" data-target="#directions" role="button">
+                    <a href="" data-toggle="modal"
+                        data-target="#directions<%- record['zone_id'] %><%- record['seat_id'] %>" role="button">
                         Click here
                     </a>
                 </td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>A</td>
-                <td>
-                    <a href="" data-toggle="modal" data-target="#directions" role="button">
-                        Click here
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>B</td>
-                <td>
-                    <a href="" data-toggle="modal" data-target="#directions" role="button">
-                        Click here
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>C</td>
-                <td>
-                    <a href="" data-toggle="modal" data-target="#directions" role="button">
-                        Click here
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>D</td>
-                <td>
-                    <a href="" data-toggle="modal" data-target="#directions" role="button">
-                        Click here
-                    </a>
-                </td>
-            </tr>
+            <% } %>
         </tbody>
     </table>
 </div>
 
-<div class="modal fade" id="directions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<% for (let record of data) { %>
+<div class="modal fade" id="directions<%- record['zone_id'] %><%- record['seat_id'] %>" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Directions to Zone</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Directions to Zone</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ol>
+                    <% for (let direction of record['directions']) { %>
+                    <li>
+                        <%- direction %>
+                    </li>
+                    <% } %>
+                </ol>
+            </div>
         </div>
-        <div class="modal-body">
-            <ol>
-                <li>
-                    After entering the Library from the main entrance, turn right.
-                </li>
-                <li>
-                    Keep moving forward until you see the group study area on your right.
-                </li>
-                <li>
-                    Turn left.
-                </li>
-            </ol>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
+<% } %>

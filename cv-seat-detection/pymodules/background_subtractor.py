@@ -41,7 +41,6 @@ class BackgroundSubtractor:
         frame = self.convert_to_grayscale(frame)
         frame = cv2.GaussianBlur(frame, (11, 11), 0)
 
-        # self.update_background(frame)
 
         diff = cv2.absdiff(self.background.astype(np.uint8), frame)
         _, diff = cv2.threshold(diff, self.threshold, 255, cv2.THRESH_BINARY)

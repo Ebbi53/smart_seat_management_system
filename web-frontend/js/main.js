@@ -8,6 +8,7 @@ require.config({
         'backbone': '../lib/backbone',
         'text': '../lib/text',
         'bootstrap': '../lib/bootstrap-4.3.1/dist/js/bootstrap.bundle',
+        'timer': '../plugin/harshen-jQuery-countdownTimer-c9afa61/jquery.countdownTimer'
     },
     shim: {
         'bootstrap': {

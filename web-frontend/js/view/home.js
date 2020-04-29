@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', 'text!template/home.html', 'model/seats', 'pageAlignment'], function ($, _, Backbone, template, Model, pageAlignment) {
+define(['jquery', 'underscore', 'backbone', 'text!template/home.html', 'model/overview', 'pageAlignment'], function ($, _, Backbone, template, Model, pageAlignment) {
     return Backbone.View.extend({
         tagname: 'div',
         className: 'row mg-bt',
@@ -6,8 +6,13 @@ define(['jquery', 'underscore', 'backbone', 'text!template/home.html', 'model/se
         id: 'home',
 
         initialize: function () {
+            var that = this;
             this.model = Model;
-            this.render();
+            this.model.fetch({
+                success: function () {
+                    that.render();
+                }
+            });
         },
 
         events: {
@@ -15,12 +20,12 @@ define(['jquery', 'underscore', 'backbone', 'text!template/home.html', 'model/se
 
 
         render: function () {
-            this.$el.html(_.template(this.template));
-            // this.$el.html(_.template(this.template)(_.extend(this.model.toJSON())));
+            this.$el.html(_.template(this.template)(_.extend(this.model.toJSON())));
 
 
             $(document).ready(function () {
                 pageAlignment();
+
             })
         },
 

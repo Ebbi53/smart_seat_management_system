@@ -1,7 +1,10 @@
+<div class="w-100" id="reload-icon">
+    <i class="fas fa-sync-alt"></i>
+</div>
 <div class="col-12">
-    <div class="row">
-        <div class="col-6">
-            <div class="row">
+    <div class="row mr-0 ml-0">
+        <div class="col-10 col-sm-6">
+            <div class="row mr-0 ml-0">
                 <div class="led-box col-2">
                     <div class="led-yellow"></div>
                 </div>
@@ -18,15 +21,15 @@
                             Total seats being tracked
                         </td>
                         <td colspan="2">
-                            10
+                            <%- Total %>
                         </td>
                     </tr>
                     <tr class="table-success">
                         <td>
                             Available
                         </td>
-                        <td>
-                            5
+                        <td id="available">
+                            <%- Available %>
                         </td>
                         <td>
                             <i class="fas fa-check-circle"></i>
@@ -36,8 +39,9 @@
                         <td>
                             Reserved
                         </td>
-                        <td>
-                            3
+                        <td id="reserved">
+                            <%- Reserved %>
+
                         </td>
                         <td>
                             <i class="fas fa-exclamation-circle"></i>
@@ -45,10 +49,11 @@
                     </tr>
                     <tr class="table-danger">
                         <td>
-                            Taken
+                            Occupied
                         </td>
                         <td>
-                            2
+                            <%- Occupied %>
+
                         </td>
                         <td>
                             <i class="fas fa-times-circle"></i>

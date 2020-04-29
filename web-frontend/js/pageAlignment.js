@@ -4,6 +4,9 @@ define(['jquery', 'underscore', 'backbone'], function ($, _, Backbone) {
     }
 
     return function () {
+        $('#reload-icon i').click(() => {
+            location.reload()
+        })
         if (window.innerWidth <= 992) {
 
             if ((60 + $('#navbar_button').outerHeight() + $('#navdiv').outerHeight() + $('#body').outerHeight() + $('div#heading').outerHeight() + $('footer').outerHeight()) > window.innerHeight) {
